@@ -35,20 +35,26 @@
               });
 
 <script>
+  // Variável para definir a palavra a ser substituída
+  const palavraAlvo = 'hoje'; // A palavra que será substituída (sem case sensitive)
+
   // Função para obter a data atual formatada
   function obterDataAtual() {
     return new Date().toLocaleDateString('pt-BR', {
-      timeZone: 'America/Sao_Paulo', // Altere para o fuso horário desejado
+      timeZone: 'America/Sao_Paulo',
       dateStyle: 'short'
     });
   }
 
-  // Substituir a palavra "Hoje" pela data formatada
+  // Substituir a palavra escolhida pela data formatada (sem case sensitive)
   document.addEventListener('DOMContentLoaded', function () {
     const textoAlvo = document.body.innerHTML;
-    document.body.innerHTML = textoAlvo.replace('Hoje', obterDataAtual());
+    const regex = new RegExp(palavraAlvo, 'gi'); // Expressão regular para encontrar "hoje" (case insensitive)
+    const novaData = obterDataAtual();
+    document.body.innerHTML = textoAlvo.replace(regex, novaData);
   });
 </script>
+
 
 
               
