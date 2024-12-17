@@ -44,8 +44,12 @@
 
   // Substituir a palavra "Hoje" pela data formatada
   document.addEventListener('DOMContentLoaded', function () {
-    const textoAlvo = document.body.innerHTML;
-    document.body.innerHTML = textoAlvo.replace('Hoje', obterDataAtual());
+    const elementos = document.querySelectorAll('*');
+    elementos.forEach(el => {
+      if (el.textContent.includes('Hoje')) {
+        el.textContent = el.textContent.replace('Hoje', obterDataAtual());
+      }
+    });
   });
 </script>
 
@@ -97,29 +101,24 @@
       </div>
     </div>
   </div>
+  
+  <button type="button" 
+      class="undefined 
+      h-10  
+      group
+      transform whitespace-nowrap text-center
+      text-sm font-semibold transition duration-100
+      ease-in-out
+      cursor-pointer
+      bg-pink-500 text-white hover:brightness-125
+      w-full max-w-2xl
+      rounded-lg
+      px-4
+      shadow-sm hover:shadow"
+      style="background: rgb(236, 72, 153);"
+      onclick="window.location.href='https://chat.wipik.site/26-90-3-hrwmgab';">
+      <div class="inline-flex h-full items-center gap-2 text-center">
+          Continuar
+      </div>
+  </button>
 </body>
-
-<br><br>
-
-
-<button type="button" 
-    class="undefined 
-    h-10  
-    group
-    transform whitespace-nowrap text-center
-    text-sm font-semibold transition duration-100
-    ease-in-out
-    cursor-pointer
-    bg-pink-500 text-white hover:brightness-125
-    w-full max-w-2xl
-    rounded-lg
-    px-4
-    shadow-sm hover:shadow"
-    style="background: rgb(236, 72, 153);"
-    onclick="window.location.href='https://chat.wipik.site/26-90-3-hrwmgab';">
-    <div class="inline-flex h-full items-center gap-2 text-center">
-        Continuar
-    </div>
-</button>
-
-</div></div></form></div></div></body></html>
